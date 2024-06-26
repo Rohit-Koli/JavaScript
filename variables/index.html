@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Myntra Bag Exercise</title>
+    <style>
+        .greenColorBtn{
+            background-color: lightgreen;
+            border-radius: 5px;
+            padding: 5px;
+            width: 150px;
+            color:black;
+        }
+        .btn{
+            border: none;
+            color:black;
+        }
+        #btnWishList{
+            padding: 5px 15px;
+            border: none;
+            border-radius: 5px;
+            width:150px;
+        }
+    </style>
+</head>
+<body>
+    <button class="btn greenColorBtn" id="btnAdd" onclick="add()">Add to Bag</button>
+    <button class="btn" id="btnWishList" onclick="wishlist()">Move to Wishlist</button>
+    <button class="btn greenColorBtn" id="btnSale" onclick="add2()">Add 1+1 sale item</button>
+    <p id="info"></p>
+
+    <script>
+        var item=0;
+        function add() {
+            item+=1;
+            // document.querySelector('#info').innerHTML=`<b>Your Bag has `+ item +` items</b>`;
+            document.querySelector('#info').innerHTML=`<b>Your Bag has ${item} items</b>`;
+        }
+        function wishlist(){
+            item-=1;
+            document.querySelector('#info').innerHTML=`<b>Your Bag has ${item} items</b>`;
+        }
+        function add2(){
+            item+=2;
+            document.querySelector('#info').innerHTML=`<b>Your Bag has `+item+` items</b>`;
+        }
+    </script>
+</body>
+</html>
