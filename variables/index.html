@@ -28,10 +28,13 @@
     <button class="btn greenColorBtn" id="btnAdd" onclick="add()">Add to Bag</button>
     <button class="btn" id="btnWishList" onclick="wishlist()">Move to Wishlist</button>
     <button class="btn greenColorBtn" id="btnSale" onclick="add2()">Add 1+1 sale item</button>
+    <button class="btn greenColorBtn" id="btnSale" onclick="totalAmt()">Total Amount</button>
     <p id="info"></p>
+    <p id="total"></p>
 
     <script>
         var item=0;
+        var cost=100;
         function add() {
             item+=1;
             // document.querySelector('#info').innerHTML=`<b>Your Bag has `+ item +` items</b>`;
@@ -44,6 +47,11 @@
         function add2(){
             item+=2;
             document.querySelector('#info').innerHTML=`<b>Your Bag has `+item+` items</b>`;
+        }
+        function totalAmt() {
+            const gst=18;
+            let totalAmount=(item*cost)*118/100;
+            document.querySelector('#total').innerHTML=`<b>Your Total Amount is ${totalAmount}</b>`;
         }
     </script>
 </body>
