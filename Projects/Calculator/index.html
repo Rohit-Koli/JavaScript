@@ -8,10 +8,14 @@
 </head>
 <body>
     <div id="calculator">        
-            <input type="text" name="input" id="input">
+            <input type="text" name="input" id="input" disabled>
         <div class="buttonsContainer">
             <div class="nums">
-                <button id="clear">C</button>
+                <button id="clear" onclick="
+                    let r='';
+                    CalVal=r;
+                    document.querySelector('#input').value=CalVal;
+                    ">C</button>
             </div>
             <div class="nums">
                 <button id="one" onclick="CalVal+='1';
@@ -23,7 +27,9 @@
                 ">2</button>
             </div>
             <div class="nums">
-                <button id="plus">+</button>
+                <button id="plus" onclick="CalVal=CalVal+'+';
+                document.querySelector('#input').value=CalVal;
+                ">+</button>
             </div>
             <div class="nums">
                 <button id="three" onclick="CalVal+='3';
@@ -36,7 +42,9 @@
                 ">4</button>
             </div>
             <div class="nums">
-                <button id="sub">-</button>
+                <button id="sub" onclick="CalVal+='-';
+                document.querySelector('#input').value=CalVal;
+                ">-</button>
             </div>
             <div class="nums">
                 <button id="five" onclick="CalVal+='5';
@@ -49,7 +57,9 @@
                 ">6</button>
             </div>
             <div class="nums">
-                <button id="mult">*</button>
+                <button id="mult" onclick="CalVal+='*';
+                document.querySelector('#input').value=CalVal;
+                ">*</button>
             </div>
             <div class="nums">
                 <button id="seven" onclick="CalVal+='7';
@@ -62,10 +72,15 @@
                 ">8</button>
             </div>
             <div class="nums">
-                <button id="div">/</button>
+                <button id="div" onclick="CalVal+='/';
+                document.querySelector('#input').value=CalVal;
+                ">/</button>
             </div>
             <div class="nums">
-                <button id="equal">=</button>
+                <button id="equal" onclick="
+                    let res=eval(CalVal);
+                    document.querySelector('#input').value=res;
+                    ">=</button>
             </div>
             <div class="nums">
                 <button id="nine" onclick="CalVal+='9';
@@ -77,7 +92,9 @@
                 document.querySelector('#input').value=CalVal;
                 ">0</button>
             </div>
-            <div class="nums">
+            <div class="nums" onclick="CalVal+='.';
+            document.querySelector('#input').value=CalVal;
+            ">
                 <button id="dot">.</button>
             </div>
         </div
