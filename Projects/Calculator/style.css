@@ -1,0 +1,20 @@
+#calculator{
+    border: 2px solid black;
+    border-radius: 5px;
+}
+.buttonsContainer{
+    display: flex;
+    width: 200px;
+    font-size: larger;
+}
+.nums{
+    width: 50px;
+    height: 40px;
+    justify-content: center;
+    margin: 3px;
+    flex-wrap: wrap;
+}
+.nums{
+    height: 50px;
+    width:150px;
+}
