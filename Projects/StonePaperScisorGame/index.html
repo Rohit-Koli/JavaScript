@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stone Paper Scisor Game</title>
+    <style>
+        body{
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <h2>Stone Paper Scisor Game</h2>
+
+    <button class="btns" id="stone" onclick="game(0)">
+        Stone
+    </button>
+    <button class="btns" id="paper" onclick="game(1)">
+        Paper
+    </button>
+    <button class="btns" id="scisor" onclick="game(2)">
+        Scisor
+    </button>
+    <p class="res"></p>
+
+
+    <script>
+        let r=Math.round(Math.random()*3);
+        let val=null;
+        let userScore=0;
+        let ComputerScore=0;
+
+        function game(val){
+            r=Math.round(Math.random()*3);
+            if(val==r){
+                document.querySelector('.res').innerHTML=`<b><h5>Game TIED</h5></b>`;
+                userScore+=1;
+                ComputerScore+=1;
+            }else if(val==0 && r==1){
+                document.querySelector('.res').innerHTML=`<b><h5>You WON and Computer</h5></b>`;
+                userScore+=1;
+            }else if(val==1 && r==2){
+                document.querySelector('.res').innerHTML=`<b><h5>You WON and Computer</h5></b>`;
+                userScore+=1;
+            }
+        }
+    </script>
+</body>
+</html>
