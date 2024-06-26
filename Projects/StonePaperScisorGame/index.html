@@ -8,6 +8,16 @@
         body{
             text-align: center;
         }
+        #restartBtn{
+            background-color: red;
+            color: black;
+        }
+        .btns{
+            margin: 5px;
+            padding:15px;
+            border: none;
+            border-radius: 5px;
+        }
     </style>
 </head>
 <body>
@@ -22,28 +32,87 @@
     <button class="btns" id="scisor" onclick="game(2)">
         Scisor
     </button>
+    <button class="btns" id="restartBtn" onclick="restartGame()">
+        Restart The Game 
+    </button>
     <p class="res"></p>
+    <p class="comResult"></p>
+    <p class="TotalResult"></p>
 
 
     <script>
         let r=Math.round(Math.random()*3);
-        let val=null;
         let userScore=0;
         let ComputerScore=0;
 
         function game(val){
             r=Math.round(Math.random()*3);
             if(val==r){
-                document.querySelector('.res').innerHTML=`<b><h5>Game TIED</h5></b>`;
+                //Draw
+                document.querySelector('.res').innerHTML=`<b><h4>Game TIED</h4></b>`;
                 userScore+=1;
                 ComputerScore+=1;
+                document.querySelector('.TotalResult').innerHTML=`<b><h4>User Score : ${userScore} <br> Computer Score : ${ComputerScore}</h4></b>`;                
+                if(userScore==5 || ComputerScore==5){
+                    alert('Game is Now terminated !');
+                    window.location.reload();
+                }
             }else if(val==0 && r==1){
-                document.querySelector('.res').innerHTML=`<b><h5>You WON and Computer</h5></b>`;
+                //Stone user -- Paper Comp
                 userScore+=1;
+                document.querySelector('.res').innerHTML=`<b><h4>You WON and Compute Lose</h4></b>`;
+                document.querySelector('.comResult').innerHTML=`<b><h4>because computer has Chosen Paper</h4></b>`;
+                document.querySelector('.TotalResult').innerHTML=`<b><h4>User Score : ${userScore} <br> Computer Score : ${ComputerScore}</h4></b>`;
+                if(userScore==5 || ComputerScore==5){
+                    alert('Game is Now terminated !');
+                    window.location.reload();
+                }
             }else if(val==1 && r==2){
-                document.querySelector('.res').innerHTML=`<b><h5>You WON and Computer</h5></b>`;
+                //Paper user -- Scisor Comp
+                ComputerScore+=1;
+                document.querySelector('.res').innerHTML=`<b><h4>You Lose and Computer Won</h4></b>`;
+                document.querySelector('.comResult').innerHTML=`<b><h4>because computer has Chosen Scisor</h4></b>`;
+                document.querySelector('.TotalResult').innerHTML=`<b><h4>User Score : ${userScore} <br> Computer Score : ${ComputerScore}</h4></b>`;
+                if(userScore==5 || ComputerScore==5){
+                    alert('Game is Now terminated !');
+                    window.location.reload();
+                }
+                
+            }else if(val==2 && r==1){   
+                //Scisor user -- Paper Comp 
                 userScore+=1;
-            }
+                document.querySelector('.res').innerHTML=`<b><h4>You WON and Compute Lose</h4></b>`;
+                document.querySelector('.comResult').innerHTML=`<b><h4>because computer has Chosen Paper</h4></b>`;
+                document.querySelector('.TotalResult').innerHTML=`<b><h4>User Score : ${userScore} <br> Computer Score : ${ComputerScore}</h4></b>`;                
+                if(userScore==5 || ComputerScore==5){
+                    alert('Game is Now terminated !');
+                    window.location.reload();
+                }
+            }else if(val==2 && r==0){
+                //Scisor user -- Stone Comp
+                ComputerScore+=1;
+                document.querySelector('.res').innerHTML=`<b><h4>You Lose and Computer Won</h4></b>`;
+                document.querySelector('.comResult').innerHTML=`<b><h4>because computer has Chosen Scisor</h4></b>`;
+                document.querySelector('.TotalResult').innerHTML=`<b><h4>User Score : ${userScore} <br> Computer Score : ${ComputerScore}</h4></b>`;
+                if(userScore==5 || ComputerScore==5){
+                    alert('Game is Now terminated !');
+                    window.location.reload();
+                }
+            }else{
+                //Scisor Comp -- Stone User
+                userScore+=1;
+                document.querySelector('.res').innerHTML=`<b><h4>You WON and Compute Lose</h4></b>`;
+                document.querySelector('.comResult').innerHTML=`<b><h4>because computer has Chosen Scisor</h4></b>`;
+                document.querySelector('.TotalResult').innerHTML=`<b><h4>User Score : ${userScore} <br> Computer Score : ${ComputerScore}</h4></b>`; 
+                if(userScore==5 || ComputerScore==5){
+                    alert('Game is Now terminated !');
+                    window.location.reload();
+                }
+            }            
+        }
+        function restartGame(){
+            alert('Game is Now terminated !');
+            location.reload();                
         }
     </script>
 </body>
