@@ -1,0 +1,26 @@
+document.querySelector(".box")
+<div class=​"box">​ This is a Box ​</div>​
+document.querySelector(".box").innerHTML=" HI"
+' HI'
+document.querySelector(".box").innerText
+'HI'
+document.querySelector(".box").innerHTML="This is a New Box"
+'This is a New Box'
+document.querySelector(".box").innerHTML
+'This is a New Box'
+document.querySelector(".box").outerHTML
+'<div class="box">This is a New Box</div>'
+document.querySelector(".box").tagName
+'DIV'
+document.querySelector(".box").nodeName
+'DIV'
+document.querySelector(".box").textContent
+'This is a New Box'
+document.querySelector(".box").hidden
+false
+document.querySelector(".box").hidden=true
+true
+document.querySelector(".box").outerHTML
+'<div class="box" hidden="">This is a New Box</div>'
+document.querySelector(".box").hidden=false
+false
